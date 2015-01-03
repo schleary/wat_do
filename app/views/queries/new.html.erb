@@ -1,0 +1,10 @@
+<h1>Wat Do? <sm>Seattle<sm></h1>
+
+<%= form_for @query do |f| %>
+  <%= f.label 'How much money are you willing to spend?' %>
+  $ <%= f.number_field(:price) %> <br>
+  <%= f.label 'How far are you willing to travel?' %>
+  <%= f.number_field(:price) %> miles <br>
+
+  <%= f.submit %>
+<% end %>
