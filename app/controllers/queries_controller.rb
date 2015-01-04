@@ -10,10 +10,15 @@ class QueriesController < ApplicationController
 
   def create
     @query = Query.new(query_params)
+    puts "price:"
+    puts :price.inspect
+    puts "second:"
+    puts @query.price
+    # @activities = Activity.where(price: @query.price)
 # change this, as you don't really want to save this info
 # also, you'll want a helper to write the algorithm to find this answer
     if @query.save
-      redirect_to activities_path
+      redirect_to activities_path(@query)
     else
       render 'new'
     end

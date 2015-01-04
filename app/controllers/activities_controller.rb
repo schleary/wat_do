@@ -1,12 +1,11 @@
 class ActivitiesController < ApplicationController
 
   def index
-    #sorting algorithm in the model
-    @activities = Activity.all
+    @query = Query.find(params[:id])
+    @activities = Activity.where(price: @query.price, distance: @query.distance)
   end
 
   def new
-    puts "new"
     @activity = Activity.new
   end
 

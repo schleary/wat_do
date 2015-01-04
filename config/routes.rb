@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   get  '/',                           to: 'home#index',         as: :root
 
-  get  'query/index',                 to: 'queries#index',      as: :queries
+  get 'query/index',                 to: 'queries#index',      as: :queries
   get  'query/new',                   to: 'queries#new',        as: :queries_new
   post 'query/create',                to: 'queries#create',     as: :queries_create
 
-  get  'activity/index',              to: 'activities#index',   as: :activities
+  get  'activity/:id/index',      to: 'activities#index',   as: :activities
   get  'activity/new',                to: 'activities#new',     as: :activities_new
   post 'activity/create',             to: 'activities#create',  as: :activities_create
 
