@@ -11,32 +11,29 @@
   <style type="text/css">
     #body {
       width: 100%;
-
       margin: 0%;
     }
   </style>
 
 </head>
 
-  <body onload="return ran_col()">
-        <div id="body">
-          <div class = "container">
+  <body>
+    <div id="bod">
+      <div class = "container">
 
-            <h1><%= link_to 'Wat Do?', root_path %> <div class = "small">Seattle</div></h1>
+        <h1><%= link_to 'Wat Do?', root_path %> <div class = "small">Seattle</div></h1>
 
-            <%= yield %>
-          </div>
-        </div>
-        <script type="text/javascript">
-            function ran_col() { //function name
-                var color = '#'; // hexadecimal starting symbol
-                var letters = ['75885B','7EA2AA','8BE8CE','888DA7','9C8A97','4D7EA8','FF00FF','869D7A']; //Set your colors here
-                color += letters[Math.floor(Math.random() * letters.length)];
-                document.getElementById('body').style.background = color; // Setting the random color on your div element.
-            }
-        </script>
+        <%= yield %>
 
-
-
+      </div>
+    </div>
+    <script type="text/javascript">
+      $( document ).ready(function() {
+          var color = '#'; // hexadecimal starting symbol
+          var letters = ['75885B','7EA2AA','8BE8CE','888DA7','9C8A97','4D7EA8','FF00FF','869D7A']; //Set your colors here
+          color += letters[Math.floor(Math.random() * letters.length)];
+          document.getElementById('bod').style.background = color; // Setting the random color on your div element.
+      });
+    </script>
 </body>
 </html>
