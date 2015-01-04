@@ -1,9 +1,7 @@
 <h2>Find a Thing</h2>
-<%= form_for @query, url: {action: "create"} do |f| %>
-  <%= f.label 'How much money are you willing to spend?' %>
-  $ <%= f.number_field(:price) %> <br>
-  <%= f.label 'How far are you willing to travel?' %>
-  <%= f.number_field(:distance) %> miles <br>
 
-  <%= f.submit %>
+<%= bootstrap_form_for @query, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-4", url: {action: "create"}  do |f| %>
+  <%= f.number_field :price, prepend: "$", append: ".00"  %>
+  <%= f.number_field :distance , append: "miles" %>
+  <%= f.submit "Submit" %>
 <% end %>

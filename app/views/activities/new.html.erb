@@ -1,5 +1,5 @@
 <h2>Suggest a Thing</h2>
-<%= form_for @activity, url: {action: "create"} do |f| %>
+<!-- <%= form_for @activity, url: {action: "create"} do |f| %>
   <%= f.label 'Activity Name' %>:
   <%= f.text_field :name %><br>
 
@@ -16,4 +16,13 @@
   <%= f.number_field(:distance) %> miles <br>
 
   <%= f.submit %>
+<% end %> -->
+
+<%= bootstrap_form_for @activity, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-4", url: {action: "create"}  do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :url %>
+  <%= f.text_area :description %>
+  <%= f.number_field :price, prepend: "$", append: ".00"  %>
+  <%= f.number_field :distance , append: "miles" %>
+  <%= f.submit "Submit" %>
 <% end %>
