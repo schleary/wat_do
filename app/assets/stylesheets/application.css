@@ -15,19 +15,38 @@
  */
 
 body{
-  margin: 2% 10% 2% 10%;
+  margin: 0;
+  height: 100%;
+}
+
+.container{
+  min-height: 800px;
+  padding: 3% 10% 2% 10%;
 }
 
 h1 a{
 	font: 3em/125% 'Rokkitt', serif;
-	color: #333;
+	color: white;
   text-decoration: none;
 }
 
 
 h1{
   font: 3em/125% 'Rokkitt', serif;
-  color: #333;
+  color: white;
   text-decoration: none;
-  text-align: center;
+  /*text-align: center;*/
+}
+
+.small{
+  color: black;
+  display: inline;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-family: 'Raleway', sans-serif;
+  /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+  font-size: 40px;
 }
