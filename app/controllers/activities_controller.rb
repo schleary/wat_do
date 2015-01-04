@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @query = Query.find(params[:id])
-    @activities = Activity.where(price: @query.price, distance: @query.distance)
+    @activities = Activity.where(price: 0..@query.price, distance: 0..@query.distance)
   end
 
   def new

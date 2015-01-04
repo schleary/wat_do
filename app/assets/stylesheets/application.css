@@ -13,15 +13,12 @@
  *= require_tree .
  *= require_self
  */
-#bod:before {
-  content: "";
-  position: absolute;
-  background-color: blue;
-}
 
 body{
   margin: 0;
   height: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
 }
 
 .container{
@@ -35,6 +32,11 @@ h1 a{
   text-decoration: none;
 }
 
+h1 a:hover {
+  text-decoration: none;
+  color: #D8D8D8;
+}
+
 
 h1{
   font: 3em/125% 'Rokkitt', serif;
@@ -43,8 +45,8 @@ h1{
   /*text-align: center;*/
 }
 
-.small{
-  color: black;
+.subtext{
+  color: #303030 ;
   display: inline;
 }
 
@@ -54,4 +56,8 @@ a{
   font-family: 'Raleway', sans-serif;
   /*font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
   font-size: 42px;
+}
+
+a:hover {
+  text-decoration: none;
 }
