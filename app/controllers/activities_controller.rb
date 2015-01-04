@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
 
   def index
+    #sorting algorithm in the model
     @activities = Activity.all
   end
 

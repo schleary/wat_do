@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+  margin: 2% 10% 2% 10%;
+}
+
+h1 a{
+	font: 3em/125% 'Rokkitt', serif;
+	color: #333;
+  text-decoration: none;
+}
+
+
+h1{
+  font: 3em/125% 'Rokkitt', serif;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}

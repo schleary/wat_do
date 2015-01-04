@@ -1,3 +1,9 @@
-<% @activities.each do |activity| %>
-<%= activity.name %>
+<h2>Top Ten Results:</h2>
+
+<% @activities.each_with_index do |activity, i| %>
+<%= i+ 1 %>).
+<!-- make this a link with the provided url -->
+<%= activity.name %><br>
+<%= activity.description %><br>
+<br>
 <% end %>
