@@ -1,0 +1,19 @@
+
+<%= form_for @activity, url: {action: "create"} do |f| %>
+  <%= f.label 'Activity Name' %>:
+  <%= f.text_field :name %><br>
+
+  <%= f.label 'Description' %>:
+  <%= f.text_area :description %><br>
+
+  <%= f.label 'URL' %>:
+  <%= f.text_field :url %><br>
+
+  <%= f.label 'Approximate cost per person' %>:
+  $ <%= f.number_field(:price) %> <br>
+
+  <%= f.label 'Distance from Seattle center' %>:
+  <%= f.number_field(:distance) %> miles <br>
+
+  <%= f.submit %>
+<% end %>

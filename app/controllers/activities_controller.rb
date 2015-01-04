@@ -5,13 +5,14 @@ class ActivitiesController < ApplicationController
   end
 
   def new
+    puts "new"
     @activity = Activity.new
   end
 
   def create
-    @activity.new(activity_params)
+    @activity = Activity.new(activity_params)
     if @activity.save
-      redirect_to activities_show_path(@activitiy)
+      redirect_to root_path
     else
       render 'new'
     end
@@ -20,7 +21,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:price, :distance)
+    params.require(:activity).permit(:price, :distance, :name, :url, :description)
   end
 
 

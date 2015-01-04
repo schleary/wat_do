@@ -1,5 +1,9 @@
 class QueriesController < ApplicationController
 
+  def index
+    @queries = Query.all
+  end
+  
   def new
     @query = Query.new
   end
@@ -8,7 +12,7 @@ class QueriesController < ApplicationController
     @query = Query.new(query_params)
 # change this, as you don't really want to save this info
     if @query.save
-      redirect_to activities_index_path
+      redirect_to root_path
     else
       render 'new'
     end
