@@ -10,13 +10,6 @@ class QueriesController < ApplicationController
 
   def create
     @query = Query.new(query_params)
-    puts "price:"
-    puts :price.inspect
-    puts "second:"
-    puts @query.price
-    # @activities = Activity.where(price: @query.price)
-# change this, as you don't really want to save this info
-# also, you'll want a helper to write the algorithm to find this answer
     if @query.save
       redirect_to activities_path(@query)
     else
@@ -25,7 +18,7 @@ class QueriesController < ApplicationController
   end
 
   def query_params
-    params.require(:query).permit(:price, :distance)
+    params.require(:query).permit(:price, :distance, :min_activity_level, :max_activity_level)
   end
 
 end

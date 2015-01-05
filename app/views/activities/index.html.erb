@@ -1,9 +1,14 @@
-<h2>Top Ten Results:</h2>
+<h2>Your Top Results:</h2>
 
 <% @activities.each_with_index do |activity, i| %>
-<%= i+ 1 %>).
+<div class = "title">
+  <%= i+ 1 %>).
 <!-- make this a link with the provided url -->
-<%= activity.name %><br>
-<%= activity.description %><br>
-<br>
+  <%= link_to activity.name, "http://#{activity.url}", :target => '_blank' %><br>
+</div>
+<div class = "content">
+  Description: <%= activity.description %><br>
+  Price: ~$<%= activity.price %>.00<br>
+  Distance: <%= activity.distance %> miles<br>
+</div>
 <% end %>

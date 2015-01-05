@@ -2,7 +2,13 @@ class ActivitiesController < ApplicationController
 
   def index
     @query = Query.find(params[:id])
-    @activities = Activity.where(price: 0..@query.price, distance: 0..@query.distance)
+    puts "QUERY: #{@query.max_activity_level.inspect} HAHAHA"
+    puts @query.max_activity_level
+    @activities = Activity.where( price: 0..@query.price,
+                                  distance: 0..@query.distance,
+                                  min_activity_level: @query.min_activity_level..@query.max_activity_level,
+                                  max_activity_level: @query.min_activity_level..@query.max_activity_level
+                                  )
   end
 
   def new
@@ -21,7 +27,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:price, :distance, :name, :url, :description)
+    params.require(:activity).permit(:price, :distance, :name, :url, :description, :min_activity_level, :max_activity_level)
   end
 
 
