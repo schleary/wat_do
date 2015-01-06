@@ -4,10 +4,9 @@
 <div class = "title">
   <%= i+ 1 %>).
 <!-- make this a link with the provided url -->
-  <%= link_to activity.name, "http://#{activity.url}", :target => '_blank' %><br>
+  <%= link_to activity.name, "https://#{activity.url}", :target => '_blank' %><br>
 </div>
 <div class = "content">
-  <% activity.description = activity.description.gsub(/http/, 'https:') %>
   Description: <%= activity.description %><br>c
   Price: ~$<%= activity.price %>.00<br>
   Distance: <%= activity.distance %> miles<br>
